@@ -2,7 +2,7 @@ module.exports = {
     HOST:"localhost",
     USER:"root",
     PASSWORD:"Madara*20",
-    DB:"app",
+    DB:"App_geolocation",
     dialect:"mysql",
     pool:{
         max:5,

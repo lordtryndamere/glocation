@@ -1,3 +1,4 @@
+//Models And DB Settings
 const dbConfig  = require('../../dbConfig/db.config');
 const Sequelize = require("sequelize");
 
@@ -15,13 +16,19 @@ pool:{
 })
 
 const db = {};
-db.Sequelize = Sequelize;
+db.DataType = Sequelize;
 db.sequelize = sequelize;
 
 
 //Call models
 
-
+db.business =require('./business.model')(sequelize,Sequelize);
+db.category =require('./category.model')(sequelize,Sequelize);
+db.inventary =require('./inventary.model')(sequelize,Sequelize);
+db.pointofsales =require('./pointofsales.model')(sequelize,Sequelize);
+db.product =require('./product.model')(sequelize,Sequelize);
+db.sales =require('./sales.model')(sequelize,Sequelize);
+db.user =require('./user.model')(sequelize,Sequelize);
 
 
 
