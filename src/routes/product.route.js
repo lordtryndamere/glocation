@@ -1,14 +1,15 @@
 const router = require('express').Router();
 const productController = require('../controllers/product.controller');
 const isLogged = require('../../services/isLogged');
+const replica = require('../../services/authValidation');
 
 
 
-router.post('/',productController.createproduct);
-router.get('/:id',productController.getproduct);
-router.get('/',productController.getAllproduct);
-router.get('/bycategorie/:categoria',productController.getproductsByCategorie)
-router.put('/:id',productController.upadateproduct);
-router.delete('/:id',productController.deleteproduct);
+router.post('/',isLogged,replica.grantAccess('createAny','product'),productController.createproduct);
+router.get('/:id',isLogged,replica.grantAccess('readAny','product'),productController.getproduct);
+router.get('/',isLogged,replica.grantAccess('readAny','product'),productController.getAllproduct);
+router.get('/bycategorie/:categoria',isLogged,replica.grantAccess('readAny','product'),productController.getproductsByCategorie)
+router.put('/:id',isLogged,replica.grantAccess('updateAny','product'),productController.upadateproduct);
+router.delete('/:id',isLogged,replica.grantAccess('deleteAny','product'),productController.deleteproduct);
 
 module.exports = router;

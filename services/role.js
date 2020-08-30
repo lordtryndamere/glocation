@@ -38,13 +38,17 @@ ac.grant("admin_empresa")
 
 .createAny('business')
 .readAny('business')
-.updateAny('business')
-.deleteAny('business')
+.readOwn("business")
 
 .createAny('category')
 .readAny('category')
 .updateAny('category')
 .deleteAny('category')
+
+.createAny('facture')
+.readAny('facture')
+
+
 
 
 
@@ -89,6 +93,11 @@ ac.grant("admin")
 .readAny('sales')
 .updateAny('sales')
 .deleteAny('sales')
+
+.createAny('facture')
+.readAny('facture')
+.updateAny('facture')
+.deleteAny('facture')
  
 
 return ac;
