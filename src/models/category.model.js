@@ -1,3 +1,4 @@
+//Definded model
 module.exports = (sequelize,Sequelize)=>{
     const Category = sequelize.define("Categorias",{
         nombre:{

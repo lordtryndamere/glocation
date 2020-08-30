@@ -1,3 +1,4 @@
+//Definded model
 module.exports = (sequelize,Sequelize)=>{
     const Business = sequelize.define("Empresa",{
         name:{

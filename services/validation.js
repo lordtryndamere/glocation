@@ -11,7 +11,7 @@ const registervalidation = data =>{
         ciudad:Joi.string().required(),
         celular:Joi.string().required(),
         role:Joi.string().required(),
-        //coordenadas:Joi.required(),
+   
     }
     return Joi.validate(data,schema)
 }
@@ -25,10 +25,10 @@ const Loginvalidation = data =>{
 }
 const Businessvalidation = data=>{
     const schema ={
-        nombre:Joi.string().min(3).required(),
-        nit:Joi.number().min(10).max(10).required(),
-        celular:Joi.string().min(10).max(10).required(),
-        UsuarioId:Joi.number().required()
+        name:Joi.string().min(3).required(),
+        nit:Joi.number().min(10).required(),
+        celular:Joi.string().min(10).required(),
+        user:Joi.required()
 
     }
     return Joi.validate(data,schema)
@@ -39,8 +39,8 @@ const Pointofsale = data =>{
         nombre:Joi.string().min(3).required(),
         direccion:Joi.string().required(),
         ciudad:Joi.string().required(),
-        EmpresaId:Joi.required()
-        //coordenadas:Joi.required()
+        empresa:Joi.required(),
+     
     }
     return Joi.validate(data,schema)
 }
@@ -50,24 +50,30 @@ const Products = data =>{
         name:Joi.string().min(3).required(),
         descripcion:Joi.string().max(400).required(),
         precio:Joi.number().required(),
-        disponible:Joi.boolean().required(),
-        CategoriasId:Joi.required(),
+        categoria:Joi.required(),
     }
     return Joi.validate(data,schema)
 }
-const Category = data =>{
+const Categoryval = data =>{
     const schema = {
         nombre:Joi.string().min(3).required(),
         descripcion:Joi.string().min(10).required(),
     }
     return Joi.validate(data,schema)
 }
+const Facturaval = data =>{
+    const schema = {
+        total:Joi.number().required(),
+        numerodefactura:Joi.number().min(5).required(),
+        venta:Joi.required()
+    }
+    return Joi.validate(data,schema)
+}
 const Sales = data =>{
     const schema = {
-        Punto_de_ventaId:Joi.required(),
-        InventaioId:Joi.required(),
-        UsuarioId:Joi.required(),
-        precio:Joi.number().required(),
+        puntodeventa:Joi.required(),
+        producto:Joi.required(),
+        usuario:Joi.required(),
         fecha_de_compra:Joi.required(),
         cantidad:Joi.number().required()
 
@@ -79,8 +85,8 @@ const Sales = data =>{
 const inventary = data =>{
     const schema = {
         cantidad:Joi.number().required(),
-        ProductoId:Joi.required(),
-        Punto_de_ventaId:Joi.required()
+        producto:Joi.required(),
+        puntodeventa:Joi.required()
     }
     return Joi.validate(data,schema)
 }
@@ -90,6 +96,7 @@ module.exports.loginvalidation = Loginvalidation;
 module.exports.businessvalidation = Businessvalidation;
 module.exports.Pointofsale= Pointofsale;
 module.exports.products = Products;
-module.exports.category = Category;
+module.exports.Categoryval = Categoryval;
 module.exports.sales = Sales;
-module.exports.inventary = inventary;
+module.exports.inventaryval = inventary;
+module.exports.facturaval = Facturaval;

@@ -1,9 +1,14 @@
-
-const getLocation = (address,city)=>{
-    let address = address.split('#')
-    let numeral = "23"
-    let API_URL = `https://maps.googleapis.com/maps/api/geocode/json?&address=calle150a%2395-30Bogota+CA&key=${process.env.API_KEY}`
-
+const axios = require('axios')
+ const getLocation =  (direccion,city)=>{
+     let direct = direccion.toString();
+     let ciudad = city.toString()
+     const data = axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
+        params:{
+          address:`${direct}${ciudad}`,
+          key:process.env.API_KEY
+        }
+      }).then( response=> response.data.results[0].geometry.location)
+return data
 
 }
 

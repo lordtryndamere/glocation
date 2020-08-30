@@ -1,5 +1,6 @@
+//Definded model
 module.exports = (sequelize,Sequelize)=>{
-    const Pointofsale = sequelize.define("Punto_de_venta",{
+    const Pointofsale = sequelize.define("PuntoVenta",{
         nombre:{
             type:Sequelize.STRING,
             allowNull:false
