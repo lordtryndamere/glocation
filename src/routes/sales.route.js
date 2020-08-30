@@ -4,7 +4,12 @@ const isLogged = require('../../services/isLogged');
 
 
 
-router.post('/crearventa',salesController.createSale);
+router.post('/',salesController.createSale);
+router.get('/',salesController.getAllSales);
+router.get('/:id',salesController.getSale);
+router.get('/perpointofsale/:puntodeventa',salesController.getSaleByPointOfSale);
+router.put('/:id',salesController.upadateSale);
+router.delete('/:id',salesController.deleteSale);
 
 
 module.exports = router;

@@ -12,6 +12,12 @@ const productController = {
         //Validar informacion enviada por el usuario
         const { error } = products(item);
         if (error) return res.status(400).send(error.details[0].message);
+        const nameProductExist  =  await Product.findAll({
+          where:{
+            nombre:item.nombre
+          }
+        })
+        if(nameProductExist.length>=1) return res.status(400).send("Already exists this product")
         const product ={
             nombre:item.nombre,
             descripcion:item.descripcion,

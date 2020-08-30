@@ -3,7 +3,7 @@ const Inventary = db.inventary;
 
 const {
     inventaryval
-  } = require("../../services/validation")
+  } = require("../../services/validation");
 
 const inventaryController = {
   async  createinventary(req,res){
@@ -60,7 +60,7 @@ const inventaryController = {
               include:[{model:db.product},{model:db.pointofsales}]
           });
           if (inventary.length >= 1) return res.status(200).send(inventary);
-          return res.status(404).send("categories not found");
+          return res.status(404).send("data not found");
         } catch (error) {
           res.status(500).send(error);
         }

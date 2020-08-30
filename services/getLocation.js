@@ -1,4 +1,5 @@
-const axios = require('axios')
+const axios = require('axios');
+
  const getLocation =  (direccion,city)=>{
      let direct = direccion.toString();
      let ciudad = city.toString()
@@ -8,6 +9,8 @@ const axios = require('axios')
           key:process.env.API_KEY
         }
       }).then( response=> response.data.results[0].geometry.location)
+      .catch(err=>err )
+      
 return data
 
 }

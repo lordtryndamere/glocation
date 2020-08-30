@@ -24,7 +24,7 @@ const businessController = {
             name:item.name,
             nit:item.nit,
             celular:item.celular,
-            UserId:item.user
+            UserId:item.usuario
 
         }
         try {

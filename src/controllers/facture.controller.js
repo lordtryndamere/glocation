@@ -20,8 +20,9 @@ const factureController = {
         });
         if(numerodefactura.length >=1) return res.status(403).send("this facture already exits")
         const facture ={
-            nombre:item.nombre,
-            descripcion:item.descripcion,
+            total:item.total,
+            numerodefactura:item.numerodefactura,
+            VentaId:item.venta
         }
         try {
             const savefacture = await Facture.create(facture);

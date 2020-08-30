@@ -8,6 +8,8 @@ ac.grant("comprador")
  .readAny('facture')
  .readAny('puntoventas')
  .readAny('product')
+ .createAny('sales')
+.readAny('sales')
 
 
 ac.grant("admin_empresa")

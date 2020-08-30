@@ -28,7 +28,7 @@ const Businessvalidation = data=>{
         name:Joi.string().min(3).required(),
         nit:Joi.number().min(10).required(),
         celular:Joi.string().min(10).required(),
-        user:Joi.required()
+        usuario:Joi.required()
 
     }
     return Joi.validate(data,schema)
@@ -74,7 +74,7 @@ const Sales = data =>{
         puntodeventa:Joi.required(),
         producto:Joi.required(),
         usuario:Joi.required(),
-        fecha_de_compra:Joi.required(),
+        fechadecompra:Joi.required(),
         cantidad:Joi.number().required()
 
     
