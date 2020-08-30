@@ -1,6 +1,6 @@
 const db = require("../models");
 const Inventary = db.inventary;
-const Op = db.Sequelize.Op;
+
 const {
     inventaryval
   } = require("../../services/validation")
@@ -32,7 +32,7 @@ const inventaryController = {
           const id = req.params.id;
           const inventary = await Inventary.findAll({
             where: { InventarioId: id },
-            include:[{model:db.product},{model:db.pointofsales}]
+            include:[{model:db.product},{model:db.pointofsales},{model:db.product}]
           });
           if (inventary.length >= 1) return res.status(200).send(inventary);
           return res.status(404).send("inventary with id"+id+"not found");

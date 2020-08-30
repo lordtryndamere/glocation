@@ -47,7 +47,7 @@ const Pointofsale = data =>{
 
 const Products = data =>{
     const schema ={
-        name:Joi.string().min(3).required(),
+        nombre:Joi.string().min(3).required(),
         descripcion:Joi.string().max(400).required(),
         precio:Joi.number().required(),
         categoria:Joi.required(),
@@ -97,6 +97,6 @@ module.exports.businessvalidation = Businessvalidation;
 module.exports.Pointofsale= Pointofsale;
 module.exports.products = Products;
 module.exports.Categoryval = Categoryval;
-module.exports.sales = Sales;
+module.exports.salesval = Sales;
 module.exports.inventaryval = inventary;
 module.exports.facturaval = Facturaval;

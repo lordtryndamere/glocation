@@ -27,6 +27,11 @@ module.exports = (sequelize,Sequelize)=>{
         },
         coordenadas:{
             type:Sequelize.JSON
+        },
+        role:{
+            type:Sequelize.STRING,
+            allowNull:false
+
         }
     })
     return User

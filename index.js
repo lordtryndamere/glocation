@@ -16,6 +16,7 @@ const inventaryRoute = require('./src/routes/inventary.route');
 const productRoute = require('./src/routes/product.route');
 const pointofsaleRoute = require('./src/routes/pointofsales.route');
 const factureRoute = require('./src/routes/facture.route');
+const SaleRoute = require('./src/routes/sales.route');
 
 
 
@@ -45,6 +46,7 @@ app.use('/API/inventario',inventaryRoute);
 app.use('/API/producto',productRoute);
 app.use('/API/puntoventa',pointofsaleRoute);
 app.use('/API/factura',factureRoute);
+app.use('/API/ventas',SaleRoute);
 
 
 app.listen(PORT,()=>{
