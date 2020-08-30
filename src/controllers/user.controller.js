@@ -75,12 +75,13 @@ const userController = {
 
     //Creando y asignando token
     const token = jwt.sign(
-      { id: data.id, email: data.email, rol: data.role },
+      { id: data.id, email: data.email, role: data.role },
       process.env.TOKEN_SECRET
     );
+
     res.header("auth-token", token).send({
       user: user,
-      token: token,
+      role: data.role
     });
   },
 

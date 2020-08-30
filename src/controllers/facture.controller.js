@@ -1,6 +1,6 @@
 const db = require("../models");
 const Facture = db.factura;
-const Op = db.Sequelize.Op;
+
 const {
     facturaval
   } = require("../../services/validation")

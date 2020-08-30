@@ -54,7 +54,7 @@ const pointofsalesController = {
             include:[{model:db.business}]
           });
           if (pointofsales.length >= 1) return res.status(200).send(pointofsales);
-          return res.status(404).send("pointofsale with id"+id+"not found");
+          return res.status(404).send("pointofsale with id "+id+"not found");
         } catch (error) {
           res.status(500).send(error);
         }

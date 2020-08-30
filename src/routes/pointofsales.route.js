@@ -1,12 +1,13 @@
 const router = require('express').Router();
 const pointofsalesController = require('../controllers/pointofsales.controller');
+const replica = require('../../services/authValidation')
+const isLogged = require('../../services/isLogged');
 
 
-
-router.post('/',pointofsalesController.createpointofsales);
-router.get('/:id',pointofsalesController.getpointofsale);
-router.get('/',pointofsalesController.getAllpointofsales);
-router.put('/:id',pointofsalesController.upadatepointofsales);
-router.delete('/:id',pointofsalesController.deletepointofsales);
+router.post('/',isLogged,replica.grantAccess('createAny','puntoventas'),pointofsalesController.createpointofsales);
+router.get('/:id',isLogged,replica.grantAccess('readAny','puntoventas'),pointofsalesController.getpointofsale);
+router.get('/',isLogged,replica.grantAccess('readAny','puntoventas'),pointofsalesController.getAllpointofsales);
+router.put('/:id',isLogged,replica.grantAccess('updateAny','puntoventas'),pointofsalesController.upadatepointofsales);
+router.delete('/:id',isLogged,replica.grantAccess('deleteAny','puntoventas'),pointofsalesController.deletepointofsales);
 
 module.exports = router;

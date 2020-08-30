@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const productController = require('../controllers/product.controller');
+const isLogged = require('../../services/isLogged');
 
 
 

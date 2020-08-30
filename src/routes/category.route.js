@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const categoryController = require('../controllers/category.controller');
+const isLogged = require('../../services/isLogged');
 
 
 
