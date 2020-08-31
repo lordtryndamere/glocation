@@ -20,7 +20,10 @@ const userController = {
     const { error } = registervalidation(item);
     if (error) return res.status(400).send(error.details[0].message);
     //Validar rol
-    if(item.role != "admin" || item.role != "admin_empresa" || item.role != "comprador") return res.status(400).send("invalid role")
+    const  roles =[{rol:"admin"},{rol:"admin_empresa"},{rol:"comprador"}]
+    let finded = roles.find(element=> element.rol==item.role)
+    
+    if(!finded) return res.status(400).send("invalid role")
     //Validar si el usuario ya existe en la DB
     const emailExists = await User.findAll({
       where: {
