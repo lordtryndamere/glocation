@@ -83,7 +83,7 @@ const productController = {
             where: { id: id },
           });
           if (product == 1)
-            return res.status(200).send("product updated succesfully");
+            return res.status(200).send("product wass updated succesfully");
           return res
             .status(404)
             .send(

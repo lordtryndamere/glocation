@@ -156,9 +156,10 @@ const pointofsalesController = {
           puntosaunkilometro.push(newspuntos[index]);
         }
       }
-
+      if(puntosaunkilometro.length<=0) return res.status(404).send("No se encontraron puntos de venta cerca");
+      
       res.status(200).send({
-        puntos_venta_a_un_kilometro_o_menos_del_usuario_logeado :puntosaunkilometro
+        puntos_venta_a_un_kilometro_o_menos_del_usuario :puntosaunkilometro
       });
     } catch (error) {
       res.status(500).send(error);

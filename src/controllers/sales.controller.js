@@ -77,7 +77,7 @@ const salesController = {
         include:[{model:db.pointofsales}]
       });
       if (sale.length >= 1) return res.status(200).send(sale);
-      return res.status(404).send("Sale with id "+id+"not found");
+      return res.status(404).send("Sale with id pointofsale "+id+"not found");
     } catch (error) {
       res.status(500).send(error);
     }
