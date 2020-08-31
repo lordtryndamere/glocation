@@ -20,7 +20,7 @@ const businessController = {
                 [Op.or]: [{nit: item.nit}, {name: item.name}]
               }
         });
-        if(nitandNameExists.length >=1) return res.status(403).send("Nit or name already exits")
+        if(nitandNameExists.length >=1) return res.status(403).send("Nit or name already exists")
         const business ={
             name:item.name,
             nit:item.nit,

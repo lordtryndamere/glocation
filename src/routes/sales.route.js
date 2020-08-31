@@ -9,6 +9,7 @@ router.post('/',isLogged,replica.grantAccess('createAny','sales'),salesControlle
 router.get('/',isLogged,replica.grantAccess('readAny','sales'),salesController.getAllSales);
 router.get('/:id',isLogged,replica.grantAccess('readAny','sales'),salesController.getSale);
 router.get('/perpointofsale/:puntodeventa',isLogged,replica.grantAccess('readAny','sales'),salesController.getSaleByPointOfSale);
+router.get('/perempresa/:empresa',isLogged,replica.grantAccess('readAny','sales'),salesController.getSaleByBusiness);
 router.put('/:id',isLogged,replica.grantAccess('updateAny','sales'),salesController.upadateSale);
 router.delete('/:id',isLogged,replica.grantAccess('deleteAny','sales'),salesController.deleteSale);
 

@@ -18,7 +18,7 @@ const categoryController = {
                 nombre:item.nombre
             }
         });
-        if(name.length >=1) return res.status(403).send("this category already exits")
+        if(name.length >=1) return res.status(403).send("this category already exists")
         const category ={
             nombre:item.nombre,
             descripcion:item.descripcion,

@@ -19,7 +19,7 @@ const factureController = {
                 numerodefactura:item.numerodefactura
             }
         });
-        if(numerodefactura.length >=1) return res.status(403).send("this facture already exits")
+        if(numerodefactura.length >=1) return res.status(403).send("this facture already exists")
         const facture ={
             total:item.total,
             numerodefactura:item.numerodefactura,

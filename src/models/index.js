@@ -118,7 +118,14 @@ db.factura.belongsTo(db.sales,{
     }
 })
 
-
+//RELACION EMPRESA A VENTAS
+db.business.hasMany(db.sales,{onDelete:"cascade"})
+db.sales.belongsTo(db.business,{
+    foreingKey:{
+        allownull:false,
+        onDelete:"cascade"
+    }
+})
 
 
 

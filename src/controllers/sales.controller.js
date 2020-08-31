@@ -38,6 +38,7 @@ const salesController = {
       ProductoId: item.producto,
       UserId: item.usuario,
       PuntoVentumId: item.puntodeventa,
+      EmpresaId:item.empresa
     };
 
     try {
@@ -77,7 +78,21 @@ const salesController = {
         include:[{model:db.pointofsales}]
       });
       if (sale.length >= 1) return res.status(200).send(sale);
-      return res.status(404).send("Sale with id pointofsale "+id+"not found");
+      return res.status(404).send("Sales with id pointofsale "+id+"not found");
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  },
+  //METODO PARA OBTENER VENTAS POR EMPRESA
+  async getSaleByBusiness(req, res) {
+    try {
+      const id = req.params.empresa;
+      const sale = await Sales.findAll({
+        where: { EmpresaId: id },
+        include:[{model:db.business}]
+      });
+      if (sale.length >= 1) return res.status(200).send(sale);
+      return res.status(404).send("Sales with id empresa "+id+"not found");
     } catch (error) {
       res.status(500).send(error);
     }

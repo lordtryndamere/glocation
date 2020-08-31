@@ -38,7 +38,7 @@ npm start
 
 **CREAR USUARIO**
 ----
- Regresa un json con la informacion del usuario creado
+ Regresa un json con la información del usuario creado.
 
 * **URL**
 
@@ -61,11 +61,11 @@ npm start
         direccion
         ciudad
         celular
-        role  //SOLO HAY TRES ROLES "comprador" ,"admin_empresa" y "admin
+        role  //SOLO HAY TRES ROLES "comprador" ,"admin_empresa" y "admin"
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200   
     **Content:** `{
     "id": 3,
     "name": "Kevin Armando",
@@ -85,12 +85,13 @@ npm start
 
   ERROR
 
-  * **Code:** 401 UNAUTHORIZED <br />
+  * **Code:** 401 ERRORDATA
+
     **Content:** `{ error : "invlid role" }`
  
 **Obtener Usuario**
 ----
-  Regresa un json con la informacion de un solo usuario
+  Regresa un json con la información de un solo usuario.
 
 * **URL**
 
@@ -112,7 +113,8 @@ npm start
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
      **Content:** `{
     "id": 3,
     "name": "Kevin Armando",
@@ -133,17 +135,19 @@ npm start
  
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "User widh id not found" }`
+  * **Code:** 404 NOT FOUND 
+
+    **Content:** `{ error : "User not found" }`
 
   OR
 
-  * **Code:** 401 UNAUTHORIZED <br />
+  * **Code:** 401 UNAUTHORIZED 
+
     **Content:** `{ error : "Access denied." }`
 
 **Logear usuario**
 ----
- Regresa un json con la informacion del usuario logeado 
+ Regresa un json con la información del usuario logeado. 
 
 * **URL**
 
@@ -165,7 +169,8 @@ npm start
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `{
     "user": [
         {
@@ -187,7 +192,8 @@ npm start
  
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
+  * **Code:** 404 NOT FOUND 
+
     **Content:** `{ error : "Email is not found " }` `{ error : "Password is invalidad." }`
 
  
@@ -195,7 +201,7 @@ npm start
 
 **Obtener usuarios**
 ----
-  regresa un json con todos los usuarios
+  regresa un json con todos los usuarios.
 
 * **URL**
 
@@ -214,7 +220,8 @@ npm start
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `    {
         "id": 2,
         "name": "test",
@@ -266,158 +273,21 @@ npm start
  
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
+  * **Code:** 404 NOT FOUND 
+
     **Content:** `{ error : "Users not found" }`
 
   OR
 
-  * **Code:** 401 UNAUTHORIZED <br />
+  * **Code:** 401 UNAUTHORIZED 
+
     **Content:** `{ error : "acces denied" }`
-
-
-
-
-**Obtener usuario**
-----
-  regresa un json con el usuario solicitado
-
-* **URL**
-
-  API/user/:id
-
-* **Method:**
-
-  `GET`
-  
-*  **URL Params**
-   id= requerido
-
-* **Data Params**
-
-  None
-
-* **Success Response:**
-
-  * **Code:** 200 <br />
-    **Content:** `    {
-        "id": 2,
-        "name": "test",
-        "email": "test@gmail.com",
-        "contraseña": "$2a$10$KBu/Z2Wb7pWnKoMpIB9oFuOWObjW23yBgldkSNVH1pOPW1zWL5PIS",
-        "celular": 3205151620,
-        "direccion": "calle150a#95-30",
-        "ciudad": "Bogota",
-        "coordenadas": "{\"lat\":4.7474311,\"lng\":-74.0867677}",
-        "role": "comprador",
-        "createdAt": "2020-08-30T04:26:37.000Z",
-        "updatedAt": "2020-08-30T04:26:37.000Z",
-        "Empresas": [
-            {
-                "id": 2,
-                "name": "TEST",
-                "nit": 11111111,
-                "celular": 3202203099,
-                "createdAt": "2020-08-30T19:56:10.000Z",
-                "updatedAt": "2020-08-30T19:56:10.000Z",
-                "UserId": 2
-            }
-        ]
-    },
-`
- 
-* **Error Response:**
-
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "User not found" }`
-
-  OR
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "acces denied" }`
-
-
-
-
-
-**Actualizar usuario**
-----
-  regresa un mensaje de exito de la actualizacion del usuario
-
-* **URL**
-
-  API/user/:id
-
-* **Method:**
-
-  `PUT`
-  
-*  **URL Params**
-   id= requerido
-
-* **Data Params**
-
-  None
-
-* **Success Response:**
-
-  * **Code:** 200 <br />
-    **Content:** `User was  updated succesfully`,
-`
- 
-* **Error Response:**
-
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "`Cannot updated User with id="id" .Maybe User was not found or req.body is empty!" }`
-
-  OR
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "acces denied" }`
-
-
-
-
-**Eliminar usuario**
-----
-  regresa un mensaje de exito de la eliminación  del usuario
-
-* **URL**
-
-  API/user/:id
-
-* **Method:**
-
-  `DELETE`
-  
-*  **URL Params**
-   id= requerido
-
-* **Data Params**
-
-  None
-
-* **Success Response:**
-
-  * **Code:** 200 <br />
-    **Content:** `User  was deleted succesfully`,
-`
- 
-* **Error Response:**
-
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "`Cannot deletedUser with id="id" .Maybe User was not found or req.body is empty!" }`
-
-  OR
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "acces denied" }`
-
 
 
 
 **CREAR EMPRESA**
 ----
-Regresa un Json con la empresa creada
+Regresa un Json con la empresa creada.
 
 * **URL**
 
@@ -434,14 +304,18 @@ Regresa un Json con la empresa creada
 * **Data Params**
 
   name
+
   nit 
+
   celular
-  usuario //el administrador de la empresa
+
+  usuario //el administrador de la empresa (usuario creado con rol "admin_empresa")
 
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `{
     "id": 5,
     "name": "EMPRESA TEST5",
@@ -454,18 +328,21 @@ Regresa un Json con la empresa creada
  
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
+  * **Code:** 404 NOT FOUND 
+
     **Content:** `{ error : "Business not found" }`
 
   OR
 
-  * **Code:** 401 UNAUTHORIZED <br />
+  * **Code:** 401 UNAUTHORIZED 
+
+
     **Content:** `{ error : "access denid" }`
 
 
 **Obtener una empresa**
 ----
-Regresa un Json con la empresa solicitada
+Regresa un Json con la empresa solicitada.
 
 * **URL**
 
@@ -486,7 +363,8 @@ Regresa un Json con la empresa solicitada
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `{
     "id": 5,
     "name": "EMPRESA TEST5",
@@ -499,19 +377,22 @@ Regresa un Json con la empresa solicitada
  
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
+  * **Code:** 404 NOT FOUND 
+
+
     **Content:** `{ error : "Business not found" }`
 
   OR
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
 
 
 
 **Obtener todas las empresas**
 ----
-Regresa un mensaje con el exito de la actualizacion de la empresa
+Regresa un json con todas las empresas.
 
 * **URL**
 
@@ -532,7 +413,8 @@ Regresa un mensaje con el exito de la actualizacion de la empresa
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `{
     "id": 5,
     "name": "EMPRESA TEST5",
@@ -554,12 +436,15 @@ Regresa un mensaje con el exito de la actualizacion de la empresa
  
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
+  * **Code:** 404 NOT FOUND 
+
+
     **Content:** `{ error : "Business not found" }`
 
   OR
 
-  * **Code:** 401 UNAUTHORIZED <br />
+  * **Code:** 401 UNAUTHORIZED 
+
     **Content:** `{ error : "access denied" }`
 
 
@@ -568,7 +453,7 @@ Regresa un mensaje con el exito de la actualizacion de la empresa
 
 **Actualizar una empresa**
 ----
-Regresa un mensaje con el exito de la actualización de la empresa
+Regresa un mensaje con el éxito de la actualización de la empresa.
 
 * **URL**
 
@@ -589,24 +474,29 @@ Regresa un mensaje con el exito de la actualización de la empresa
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
+
     **Content:** `Businness updated succesfully`
  
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "Business not found" }`
+  * **Code:** 404 NOT FOUND 
+
+
+    **Content:** `{ error : "Cannot updated business with id=${id} .Maybe business was not found or req.body is empty!" }`
 
   OR
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
 
 
 
 **Eliminar una empresa**
 ----
-Regresa un mensaje con el exito de la eliminación de la empresa
+Regresa un mensaje con el éxito de la eliminación de la empresa.
 
 * **URL**
 
@@ -627,24 +517,25 @@ Regresa un mensaje con el exito de la eliminación de la empresa
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
-    **Content:** `Businness deletedsuccesfully`
+  * **Code:** 200 
+
+    **Content:** `Businness deleted succesfully`
  
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "Business not found" }`
+  * **Code:** 404 NOT FOUND 
+    **Content:** `{ error : "Cannot deleted business with id=${id}. Maybe business was not found !" }`
 
   OR
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+    **Content:** `{ error : "access denied" }`
 
 
 
 **Crear categoría **
 ----
-Regresa un Json con la categoría creada
+Regresa un Json con la categoría creada.
 
 * **URL**
 
@@ -667,7 +558,7 @@ Regresa un Json con la categoría creada
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
     **Content:** `  {
         "id": 1,
         "nombre": "tecnologia",
@@ -680,14 +571,14 @@ Regresa un Json con la categoría creada
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+    **Content:** `{ error : "access denied" }`
 
 
 
 **Obtener categoria **
 ----
-Regresa un Json con la categoría solicitada
+Regresa un json con la categoría solicitada.
 
 * **URL**
 
@@ -708,7 +599,8 @@ Regresa un Json con la categoría solicitada
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `  {
         "id": 1,
         "nombre": "tecnologia",
@@ -720,9 +612,12 @@ Regresa un Json con la categoría solicitada
 * **Error Response:**
 
 
+   * **Code:** 404 NOT FOUND 
+    **Content:** `{ error : "Cannot get category with id=${id}. Maybe business was not found !" }
+OR
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+    **Content:** `{ error : "access denied" }`
 
 
 
@@ -730,7 +625,7 @@ Regresa un Json con la categoría solicitada
 
 **Obtener categorias **
 ----
-Regresa un Json con todas las categorias 
+Regresa un json con todas las categorías.
 
 * **URL**
 
@@ -751,7 +646,8 @@ Regresa un Json con todas las categorias
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `     {
         "id": 1,
         "nombre": "tecnologia",
@@ -771,15 +667,21 @@ Regresa un Json con todas las categorias
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
+OR
+
+  * **Code:** 404 NOTFOUND 
+
+    **Content:** `{ error : "categories not found" }`
 
 
 
 
-**Actualizar categoria **
+**Actualizar categoría **
 ----
-Regresa mensaje de exito de la categoria actualizada
+Regresa mensaje de éxito de la categoría actualizada.
 
 * **URL**
 
@@ -800,21 +702,28 @@ Regresa mensaje de exito de la categoria actualizada
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
+
     **Content:** ` Category updated succesfully`
  
 * **Error Response:**
 
 
+   
+   * **Code:** 404 NOT FOUND 
+    **Content:** `{ error : "Cannot updated category with id=${id}. Maybe category was not found !" }
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+OR
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
 
 
 
-**Eliminar categoria **
+**Eliminar categoría **
 ----
-Regresa mensaje de exito de la categoria eliminada
+Regresa mensaje de éxito de la eliminación de la categoría.
 
 * **URL**
 
@@ -835,15 +744,21 @@ Regresa mensaje de exito de la categoria eliminada
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
+
     **Content:** ` Category deleted succesfully`
  
 * **Error Response:**
 
+  * **Code:** 404 NOT FOUND 
+    **Content:** `{ error : "Cannot deleted category with id=${id}. Maybe category was not found !" }
+  OR
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+   **Content:** `{ error : "access denied" }`
 
 
 
@@ -852,7 +767,7 @@ Regresa mensaje de exito de la categoria eliminada
 
 **Crear factura **
 ----
-Regresa un Json con la factura creada
+Regresa un json con la factura creada.
 
 * **URL**
 
@@ -877,7 +792,9 @@ Regresa un Json con la factura creada
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
+
     **Content:** `  {
         "id": 1,
         "total": 50000,
@@ -891,8 +808,10 @@ Regresa un Json con la factura creada
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+
+    **Content:** `{ error : "access denied" }`
 
 
 
@@ -900,7 +819,7 @@ Regresa un Json con la factura creada
 
 **Obtener factura **
 ----
-Regresa un Json con la factura solicitada
+Regresa un json con la factura solicitada.
 
 * **URL**
 
@@ -911,7 +830,7 @@ Regresa un Json con la factura solicitada
   `GET`
   
 *  **URL Params**
-   id) requerido
+   id = requerido
     
 
 * **Data Params**
@@ -921,7 +840,8 @@ None
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `  {
         "id": 1,
         "total": 50000,
@@ -935,19 +855,21 @@ None
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED
+
+
+    **Content:** `{ error : "access denied" }`
 
    Or
 
-  * **Code:** 404 NOT FOUND<br />
-    **Content:** `{ error : "facture with id "id" not found" }`
+   * **Code:** 404 NOT FOUND 
+    **Content:** `{ error : "Cannot get facture with id=${id}. Maybe facture was not found !" }
 
 
 
 **Obtener facturas **
 ----
-Regresa un Json con la factura solicitada
+Regresa un json de todas las facturas.
 
 * **URL**
 
@@ -968,7 +890,8 @@ Regresa un Json con la factura solicitada
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `  {
         "id": 1,
         "total": 50000,
@@ -982,19 +905,22 @@ Regresa un Json con la factura solicitada
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
 
    Or
 
-  * **Code:** 404 NOT FOUND<br />
+  * **Code:** 404 NOT FOUND
+
+
     **Content:** `{ error : "factures not found " }`
 
 
 
 **Actualizar factura **
 ----
-Regresa mensaje de exito ,factura actualizada
+Regresa mensaje de éxito de la actualización de la factura.
 
 * **URL**
 
@@ -1015,26 +941,31 @@ None
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
+
     **Content:** `Facture updated succesfully`
  
 * **Error Response:**
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+
+    **Content:** `{ error : "access denied" }`
 
    Or
 
-  * **Code:** 404 NOT FOUND<br />
-    **Content:** `{ error : "facture with id "id" not found" }`
+  * **Code:** 404 NOT FOUND
+
+    **Content:** `{ error : "`Cannot updated facture with id=${id} .Maybe facture was not found or req.body is empty!" }`
 
 
 
 **Eliminar factura **
 ----
-Regresa mensaje de exito ,factura eliminada 
+Regresa mensaje de éxito de la eliminación de la factura.
 
 * **URL**
 
@@ -1055,20 +986,24 @@ None
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `Facture was deleted succesfully`
  
 * **Error Response:**
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+
+    **Content:** `{ error : "access denied" }`
 
    Or
 
-  * **Code:** 404 NOT FOUND<br />
-    **Content:** `{ error : "facture with id "id" not found" }`
+  * **Code:** 404 NOT FOUND
+
+    **Content:** `{ error : "`Cannot deleted facture with id=${id} .Maybe facture was not found or req.body is empty!" }`
 
 
 
@@ -1078,7 +1013,7 @@ None
 
 **Crear Inventario**
 ----
-Regresa un Json con el inventario creado
+Regresa un json con el inventario creado.
 
 * **URL**
 
@@ -1101,7 +1036,8 @@ Regresa un Json con el inventario creado
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `{
         "id": 1,
         "cantidad": 50,
@@ -1125,14 +1061,16 @@ Regresa un Json con el inventario creado
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+
+    **Content:** `{ error : "access denied" }`
 
 
 
 **Obtener Inventarios**
 ----
-Regresa un Json con todo la información de inventarios
+Regresa un json con todo la información de inventarios.
 
 * **URL**
 
@@ -1153,7 +1091,9 @@ Regresa un Json con todo la información de inventarios
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
+
     **Content:** `{
         "id": 1,
         "cantidad": 50,
@@ -1177,9 +1117,15 @@ Regresa un Json con todo la información de inventarios
 
 
 
-  * **Code:** 404 NOTFOUND<br />
-    **Content:** `{ error : "inventario not found" }`
+  * **Code:** 404 NOTFOUND
 
+
+    **Content:** `{ error : "data not found" }`
+OR
+
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
 
 
 
@@ -1187,7 +1133,7 @@ Regresa un Json con todo la información de inventarios
 
 **Obtener Inventario**
 ----
-Regresa un Json con el inventario solicitado
+Regresa un json con el inventario solicitado.
 
 * **URL**
 
@@ -1208,7 +1154,9 @@ Regresa un Json con el inventario solicitado
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200
+
+
     **Content:** `{
         "id": 1,
         "cantidad": 50,
@@ -1232,15 +1180,23 @@ Regresa un Json con el inventario solicitado
 
 
 
-  * **Code:** 404 NOTFOUND<br />
+  * **Code:** 404 NOTFOUND
+
+
     **Content:** `{ error : "inventaries with id "id"  not found}`
+OR
+
+  * **Code:** 401 UNAUTHORIZED 
+
+
+    **Content:** `{ error : "access denied" }`
 
 
 
 
 **Actualizar Inventario**
 ----
-Regresa un mensaje de exito de la actualización del inventario
+Regresa un mensaje de éxito de la actualización del inventario.
 
 * **URL**
 
@@ -1261,16 +1217,24 @@ Regresa un mensaje de exito de la actualización del inventario
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `Iventario was updated succesfully`
  
 * **Error Response:**
 
 
 
-  * **Code:** 404 NOTFOUND<br />
-    **Content:** `{ error : "inventario with id "id"  not found}`
+  * **Code:** 404 NOTFOUND
 
+    **Content:** `{ error : "Cannot updated inventary with id=${id} .Maybe inventary was not found or req.body is empty!"}`
+
+OR
+
+  * **Code:** 401 UNAUTHORIZED
+
+
+    **Content:** `{ error : "access denied" }`
 
 
 
@@ -1278,7 +1242,7 @@ Regresa un mensaje de exito de la actualización del inventario
 
 **Eliminar Inventario**
 ----
-Regresa un mensaje de éxito de la eliminación  del inventario
+Regresa un mensaje de éxito de la eliminación  del inventario.
 
 * **URL**
 
@@ -1299,15 +1263,82 @@ Regresa un mensaje de éxito de la eliminación  del inventario
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `Iventario was deleted succesfully`
  
 * **Error Response:**
 
 
 
-  * **Code:** 404 NOTFOUND<br />
-    **Content:** `{ error : "inventario with id "id"  not found}`
+  * **Code:** 404 NOTFOUND
+
+    **Content:** `{ error : "Cannot deleted inventary with id=${id}. Maybe inventary was not found !"}`
+OR
+
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
+
+
+
+**Obtener Inventario por punto de venta**
+----
+Regresa un Json con el inventario solicitado por punto de venta
+
+* **URL**
+
+  API/inventario/porpuntodeventa/:puntoventa
+
+* **Method:**
+
+  `GET`
+  
+*  **URL Params**
+  
+    puntoventa = id del punto de venta requerido
+
+* **Data Params**
+
+
+
+
+* **Success Response:**
+
+  * **Code:** 200 
+
+    **Content:** `{
+        "id": 1,
+        "cantidad": 50,
+        "createdAt": "2020-08-30T04:45:36.000Z",
+        "updatedAt": "2020-08-30T04:45:36.000Z",
+        "PuntoVentumId": 1,
+        "ProductoId": 3,
+        "Producto": {
+            "id": 3,
+            "nombre": "alcalcelcer",
+            "descripcion": "medicamento para el dolor de cabeza",
+            "precio": 5000,
+            "createdAt": "2020-08-30T04:42:30.000Z",
+            "updatedAt": "2020-08-30T04:42:30.000Z",
+            "CategoriaId": 2
+        },
+        "PuntoVentum": 1
+    },`
+ 
+* **Error Response:**
+
+
+
+  * **Code:** 404 NOTFOUND
+
+    **Content:** `{ error : "inventaries with id "id"  not found}`
+OR
+
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
+
 
 
 
@@ -1317,7 +1348,7 @@ Regresa un mensaje de éxito de la eliminación  del inventario
 
 **Crear Punto de venta**
 ----
-Regresa un json con el punto de venta creado y los datos de la empresa al que pertenece
+Regresa un json con el punto de venta creado y los datos de la empresa al que pertenece.
 
 * **URL**
 
@@ -1334,14 +1365,19 @@ Regresa un json con el punto de venta creado y los datos de la empresa al que pe
 * **Data Params**
 
  nombre
+
  dirección
+
  ciudad
+
  empresa
+
 
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `  {
         "id": 4,
         "nombre": "Puntodeventatest3",
@@ -1367,14 +1403,15 @@ Regresa un json con el punto de venta creado y los datos de la empresa al que pe
 
   "{\"lat\"Direccion ingresada incorrecta,\"lng\":Direccion ingresada incorrecta}"
   
-   Esto se debe a que la API de google de geocode no encontró la dirección con los datos
-   ingresados
+   Esto se debe a que la API de google de geocode no encontró las coordenadas con la direccion y ciudad 
+   ingresada.
 
 
 
 
-  * **Code:** 401 NOTFOUND <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 NOTFOUND 
+
+    **Content:** `{ error : "access denied" }`
 
 
 
@@ -1383,7 +1420,7 @@ Regresa un json con el punto de venta creado y los datos de la empresa al que pe
 
 **Obtener puntos de venta**
 ----
-Regresa un json con los puntos de venta 
+Regresa un json con los puntos de venta.
 
 * **URL**
 
@@ -1403,7 +1440,8 @@ Regresa un json con los puntos de venta
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `  {
         "id": 4,
         "nombre": "Puntodeventatest3",
@@ -1428,13 +1466,15 @@ Regresa un json con los puntos de venta
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
 
    OR
 
 
- * **Code:** 404 NOTFOUND <br />
+ * **Code:** 404 NOTFOUND 
+
     **Content:** `{ error : "pointsofsales not found " }`
 
 
@@ -1446,7 +1486,7 @@ Regresa un json con los puntos de venta
 
 **Obtener punto de venta**
 ----
-Regresa un json con el punto de venta solicitado 
+Regresa un json con el punto de venta solicitado .
 
 * **URL**
 
@@ -1466,7 +1506,8 @@ Regresa un json con el punto de venta solicitado
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `  {
         "id": 4,
         "nombre": "Puntodeventatest3",
@@ -1491,13 +1532,15 @@ Regresa un json con el punto de venta solicitado
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+   **Content:** `{ error : "access denied" }`
 
    OR
 
 
- * **Code:** 404 NOTFOUND <br />
+ * **Code:** 404 NOTFOUND 
+
     **Content:** `{ error : "pointsofsale with id "id" not found  " }`
 
 
@@ -1506,7 +1549,7 @@ Regresa un json con el punto de venta solicitado
 
 **Actualizar punto de venta**
 ----
-Regresa un mensaje de exito de la actualización del punto de venta
+Regresa un mensaje de éxito de la actualización del punto de venta.
 
 * **URL**
 
@@ -1526,7 +1569,8 @@ Regresa un mensaje de exito de la actualización del punto de venta
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `Pointofsale was updated succesfully`
  
 * **Error Response:**
@@ -1534,21 +1578,23 @@ Regresa un mensaje de exito de la actualización del punto de venta
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED
+
+    **Content:** `{ error : "access denied" }`
 
    OR
 
 
- * **Code:** 404 NOTFOUND <br />
-    **Content:** `{ error : "pointsofsale with id "id" not found  " }`
+ * **Code:** 404 NOTFOUND 
+
+    **Content:** `{ error : "Cannot updated pointofsale with id=${id} .Maybe pointofsale was not found or req.body is empty! " }`
 
 
 
 
 **Eliminar punto de venta**
 ----
-Regresa un mensaje de exito de la eliminación del punto de venta
+Regresa un mensaje de éxito de la eliminación del punto de venta.
 
 * **URL**
 
@@ -1568,7 +1614,8 @@ Regresa un mensaje de exito de la eliminación del punto de venta
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `Pointofsale was deleted succesfully`
  
 * **Error Response:**
@@ -1576,22 +1623,23 @@ Regresa un mensaje de exito de la eliminación del punto de venta
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
 
    OR
 
 
- * **Code:** 404 NOTFOUND <br />
-    **Content:** `{ error : "pointsofsale with id "id" not found  " }`
+ * **Code:** 404 NOTFOUND 
+
+    **Content:** `{ error : "Cannot deleted pointofsale with id=${id} .Maybe deleted was not found or req.body is empty!  " }`
 
 
 
 
 **Obtener puntos de venta por ciudad **
 ----
-Regresa un json con todos los puntos de venta que estén en la ciudad solicitada
-
+Regresa un json con todos los puntos de venta que estén en la ciudad solicitada.
 * **URL**
 
   API/puntoventa/porciudad/:ciudad
@@ -1610,8 +1658,9 @@ Regresa un json con todos los puntos de venta que estén en la ciudad solicitada
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
-    **Content:** `  {
+  * **Code:** 200 
+
+   **Content:** `  {
         "id": 4,
         "nombre": "Puntodeventatest3",
         "direccion": "calle150a#95-30",
@@ -1635,13 +1684,15 @@ Regresa un json con todos los puntos de venta que estén en la ciudad solicitada
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
 
    OR
 
 
- * **Code:** 404 NOTFOUND <br />
+ * **Code:** 404 NOTFOUND 
+
     **Content:** `{ error : "pointofsales in this city not found " }`
 
 
@@ -1649,7 +1700,7 @@ Regresa un json con todos los puntos de venta que estén en la ciudad solicitada
 
 **Obtener puntos de venta a 1 kilómetro de distancia**
 ----
-Regresa un json con todos los puntos de venta que estén a 1 kilómetro a la redonda del usuario 
+Regresa un json con todos los puntos de venta que estén a 1 kilómetro a la redonda del usuario. 
 
 * **URL**
 
@@ -1669,7 +1720,8 @@ Regresa un json con todos los puntos de venta que estén a 1 kilómetro a la red
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** ` {
     "puntos_venta_a_un_kilometro_o_menos_del_usuario": [
         {
@@ -1700,13 +1752,15 @@ Regresa un json con todos los puntos de venta que estén a 1 kilómetro a la red
 
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
 
    OR
 
 
- * **Code:** 404 UNAUTHORIZED <br />
+ * **Code:** 404 UNAUTHORIZED
+
     **Content:** `{ error : "No se encontraron puntos de venta cerca" }`
 
 
@@ -1735,14 +1789,18 @@ Regresa un json con la información del producto creado.
 * **Data Params**
 
  nombre
+
  descripción
+
  precio
+
  categoría // id de la categoría
 
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `     {
         "id": 2,
         "nombre": "computador",
@@ -1757,8 +1815,8 @@ Regresa un json con la información del producto creado.
 * **Error Response:**
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+    **Content:** `{ error : "access denied" }`
 
 
 
@@ -1785,7 +1843,8 @@ Regresa un json con la información del producto creado y la categoría a la que
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `     {
         "id": 2,
         "nombre": "computador",
@@ -1806,11 +1865,13 @@ Regresa un json con la información del producto creado y la categoría a la que
 * **Error Response:**
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
   OR
  
- * **Code:** 404 NOTFOUND <br />
+ * **Code:** 404 NOTFOUND 
+
     **Content:** `{ error : "product with id "id" not found  " }`
 
 
@@ -1819,7 +1880,7 @@ Regresa un json con la información del producto creado y la categoría a la que
 
 **Obtener productos**
 ----
-Regresa un json con la información de todos los productos y sus categorías
+Regresa un json con la información de todos los productos y sus categorías.
 
 * **URL**
 
@@ -1840,7 +1901,8 @@ Regresa un json con la información de todos los productos y sus categorías
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `     {
         "id": 2,
         "nombre": "computador",
@@ -1861,11 +1923,13 @@ Regresa un json con la información de todos los productos y sus categorías
 * **Error Response:**
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
   OR
  
- * **Code:** 404 NOTFOUND <br />
+ * **Code:** 404 NOTFOUND 
+
     **Content:** `{ error : "products not found " }`
 
 
@@ -1873,7 +1937,7 @@ Regresa un json con la información de todos los productos y sus categorías
 
 **Actualizar producto**
 ----
-Regresa un mensaje de éxito de la actualización de el producto solicitado
+Regresa un mensaje de éxito de la actualización de el producto solicitado.
 
 * **URL**
 
@@ -1894,24 +1958,27 @@ Regresa un mensaje de éxito de la actualización de el producto solicitado
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `Product was updated succesfully` },`
  
 * **Error Response:**
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED
+
+    **Content:** `{ error : "access denied" }`
   OR
  
- * **Code:** 404 NOTFOUND <br />
+ * **Code:** 404 NOTFOUND 
+
     **Content:** `{ error : "`Cannot updated product with id="id" .Maybe product was not found or req.body is empty! " }`
 
 
 
 **Eliminar producto**
 ----
-Regresa un  mensaje de éxito de la eliminación de el producto solicitado
+Regresa un  mensaje de éxito de la eliminación de el producto solicitado.
 
 * **URL**
 
@@ -1932,17 +1999,20 @@ Regresa un  mensaje de éxito de la eliminación de el producto solicitado
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `product was deleted succesfully` },`
  
 * **Error Response:**
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
   OR
  
- * **Code:** 404 NOTFOUND <br />
+ * **Code:** 404 NOTFOUND 
+
     **Content:** `{ error : "`Cannot delete product with id="id" .Maybe product was not found or req.body is empty! " }`
 
 
@@ -1950,7 +2020,7 @@ Regresa un  mensaje de éxito de la eliminación de el producto solicitado
 
 **Obtener productos por categoria**
 ----
-Regresa un json con la información de todos los productos por su categoria
+Regresa un json con la información de todos los productos por su categoría.
 
 * **URL**
 
@@ -1971,7 +2041,9 @@ Regresa un json con la información de todos los productos por su categoria
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
+
     **Content:** `     {
         "id": 2,
         "nombre": "computador",
@@ -1992,11 +2064,13 @@ Regresa un json con la información de todos los productos por su categoria
 * **Error Response:**
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
+  * **Code:** 401 UNAUTHORIZED 
+
     **Content:** `{ error : "access denid" }`
   OR
  
- * **Code:** 404 NOTFOUND <br />
+ * **Code:** 404 NOTFOUND 
+
     **Content:** `{ error : "products with id category not found " }`
 
 
@@ -2022,15 +2096,22 @@ Regresa un json con la información de la venta realizada.
 * **Data Params**
 
  cantidad
+
  fechadecompra
+
  producto
+
  usuario// id de el usuario que realiza la compra
+
+ empresa // id de la empresa
+
  puntodeventa // id del punto de venta en donde se realiza la compra
 
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200
+
     **Content:** `        {
         "id": 1,
         "fecha_de_compra": "2020-08-30T09:45:36.000Z",
@@ -2038,6 +2119,7 @@ Regresa un json con la información de la venta realizada.
         "createdAt": "2020-08-30T22:55:21.000Z",
         "updatedAt": "2020-08-30T22:55:21.000Z",
         "ProductoId": 5,
+        "EmpresaId":1,
         "UserId": 2,
         "PuntoVentumId": 4
     },`
@@ -2045,16 +2127,19 @@ Regresa un json con la información de la venta realizada.
 * **Error Response:**
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+  
+    **Content:** `{ error : "access denied" }`
 
    OR
 
 
-  * **Code:** 404 NOTFOUND <br />
+  * **Code:** 404 NOTFOUND 
+
     **Content:** `{ error : "This product is not available" }`
  
-   * **Code:** 400 NOTFOUND <br />
+   * **Code:** 400 NOTFOUND 
+
     **Content:** `{ error : " "there are not enough units of this product "" }`
 
 
@@ -2083,7 +2168,8 @@ Regresa un json con la información de todas las ventas.
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `        {
         "id": 1,
         "fecha_de_compra": "2020-08-30T09:45:36.000Z",
@@ -2098,13 +2184,15 @@ Regresa un json con la información de todas las ventas.
 * **Error Response:**
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access denid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
 
    OR
 
 
-  * **Code:** 404 NOTFOUND <br />
+  * **Code:** 404 NOTFOUND
+
     **Content:** `{ error : "Sales not found }`
 
 
@@ -2132,7 +2220,8 @@ Regresa un json con todas las ventas de un punto de venta.
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `        {
         "id": 1,
         "fecha_de_compra": "2020-08-30T09:45:36.000Z",
@@ -2147,23 +2236,75 @@ Regresa un json con todas las ventas de un punto de venta.
 * **Error Response:**
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access deneid" }`
+  * **Code:** 401 UNAUTHORIZED
+
+    **Content:** `{ error : "access denied" }`
 
    OR
 
 
-  * **Code:** 404 NOTFOUND <br />
+  * **Code:** 404 NOTFOUND 
+
     **Content:** `{ error : "Sale with id pointofsale "+puntodeventaid+"not found" }`
 
 
 
 
 
+**Obtener ventas por empresa**
+----
+Regresa un json con todas las ventas de una empresa.
+
+* **URL**
+
+  API/ventas/perempresa/:empresa
+
+* **Method:**
+
+  `GET`
+  
+*  **URL Params**
+   
+  empresa = requerido
+    
+
+* **Data Params**
+
+
+
+* **Success Response:**
+
+  * **Code:** 200
+
+    **Content:** `        {
+        "id": 1,
+        "fecha_de_compra": "2020-08-30T09:45:36.000Z",
+        "cantidad": 1,
+        "createdAt": "2020-08-30T22:55:21.000Z",
+        "updatedAt": "2020-08-30T22:55:21.000Z",
+        "ProductoId": 5,
+        "UserId": 2,
+        "PuntoVentumId": 4
+    },`
+ 
+* **Error Response:**
+
+
+  * **Code:** 401 UNAUTHORIZED
+
+    **Content:** `{ error : "access denied" }`
+
+   OR
+
+
+  * **Code:** 404 NOTFOUND 
+
+    **Content:** `{ error : "Sales with id empresa "+id+"not found" }`
+
 
 **Obtener venta **
 ----
-Regresa un json con todas la informacion de la venta solicitada
+Regresa un json con todas la información de la venta solicitada.
 
 * **URL**
 
@@ -2184,7 +2325,8 @@ Regresa un json con todas la informacion de la venta solicitada
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200
+
     **Content:** `        {
         "id": 1,
         "fecha_de_compra": "2020-08-30T09:45:36.000Z",
@@ -2199,19 +2341,21 @@ Regresa un json con todas la informacion de la venta solicitada
 * **Error Response:**
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access deneid" }`
+  * **Code:** 401 UNAUTHORIZED
+
+    **Content:** `{ error : "access denied" }`
 
    OR
 
 
-  * **Code:** 404 NOTFOUND <br />
+  * **Code:** 404 NOTFOUND 
+
     **Content:** `{ error : "Sale with id "+id+"not found" }`
  
 
 **Eliminar venta **
 ----
-Regresa un  mensaje de éxito de la eliminación de la venta
+Regresa un  mensaje de éxito de la eliminación de la venta.
 
 * **URL**
 
@@ -2232,26 +2376,29 @@ Regresa un  mensaje de éxito de la eliminación de la venta
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 
+
     **Content:** `Sale was deleted succesfully`
  
 * **Error Response:**
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access deneid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
 
    OR
 
 
-  * **Code:** 404 NOTFOUND <br />
+  * **Code:** 404 NOTFOUND 
+
     **Content:** `{ error : "Cannot deleted Sale with id="id". Maybe Sale was not found !" }`
 
 
 
 **Actualizar venta **
 ----
-Regresa un  mensaje de éxito de la actualización de la venta
+Regresa un  mensaje de éxito de la actualización de la venta.
 
 * **URL**
 
@@ -2272,19 +2419,22 @@ Regresa un  mensaje de éxito de la actualización de la venta
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200
+
     **Content:** `Sale was updated succesfully`
  
 * **Error Response:**
 
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "access deneid" }`
+  * **Code:** 401 UNAUTHORIZED 
+
+    **Content:** `{ error : "access denied" }`
 
    OR
 
 
-  * **Code:** 404 NOTFOUND <br />
+  * **Code:** 404 NOTFOUND
+
     **Content:** `{ error : "Cannot updated Sale with id="id". Maybe Sale was not found !" }`
 
 
@@ -2293,9 +2443,3 @@ Regresa un  mensaje de éxito de la actualización de la venta
 
 
 
-## Recomendaciones
-crear archivo ".env" con dos variables en caso de querer cambiar la api_key de google o la llave del token : 
-
-TOKEN_SECRET = almacena la llave secreta del token.
-
-API_KEY =  se usa para el consumo de la api de google de geocoding.

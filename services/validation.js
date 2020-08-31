@@ -75,7 +75,8 @@ const Sales = data =>{
         producto:Joi.required(),
         usuario:Joi.required(),
         fechadecompra:Joi.required(),
-        cantidad:Joi.number().required()
+        cantidad:Joi.number().required(),
+        empresa:Joi.required()
 
     
 
