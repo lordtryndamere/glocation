@@ -7,7 +7,7 @@ const axios = require('axios');
      const data = axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
         params:{
           address:`${direct}${ciudad}`,
-          key:process.env.API_KEY
+          key:process.env.API_KEY || "AIzaSyC-L0qbyGTo5fhoMzk3HoqUcOjwt4GVU90"
         }
       }).then( response=> response.data.results[0].geometry.location)
       .catch(err=>err )

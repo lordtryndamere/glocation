@@ -77,7 +77,7 @@ const userController = {
     //Creando y asignando token
     const token = jwt.sign(
       { id: data.id, email: data.email, role: data.role },
-      process.env.TOKEN_SECRET
+      process.env.TOKEN_SECRET || "tokenmegasecreto"
     );
 
     res.header("auth-token", token).send({
