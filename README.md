@@ -14,6 +14,25 @@ algún inconveniente con dicha dependencia ejecutar el siguiente comando:
 npm uninstall --save @hapi/joi
 npm install --save @hapi/joi@15.0.3
 ```
+## Configuracion base de datos
+En la carpeta dbConfig del proyecto se encuentra un fichero llamado db.config , en este archivo se escriben las credenciales de la base de datos a usar ejemplo .
+
+```javascript
+{
+    HOST:"localhost",
+    USER:"user",
+    PASSWORD:"password",
+    DB:"db",
+    dialect:"mysql", 
+    pool:{
+        max:5,
+        min:0,
+        acquire:30000,
+        idle:10000
+    }
+}
+```
+
 
 ## Recomendaciones
 crear archivo ".env" con dos variables en caso de querer cambiar la api_key de google o la llave del token : 
@@ -2128,7 +2147,7 @@ Regresa un json con la información de la venta realizada.
 
 
   * **Code:** 401 UNAUTHORIZED 
-  
+
     **Content:** `{ error : "access denied" }`
 
    OR
