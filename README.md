@@ -33,6 +33,6 @@ npm start
 ## Recomendaciones
 crear archivo ".env" con dos variables en caso de querer cambiar la api_key de google o la llave del token : 
 
-TOKEN_SECRET   almacena la llave secreta del token.
+TOKEN_SECRET = almacena la llave secreta del token.
 
 API_KEY =  se usa para el consumo de la api de google de geocoding.
