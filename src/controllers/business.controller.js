@@ -7,6 +7,7 @@ const {
   } = require("../../services/validation")
 
 const businessController = {
+  //METODO PARA CREAR UNA EMPRESA
   async  createBusiness(req,res){
         const item = req.body;
         //Validar informacion enviada por el usuario
@@ -36,6 +37,7 @@ const businessController = {
         }
 
     },
+    //METODO PARA OBTENER UNA EMPRESA 
     async getBusiness(req, res) {
         try {
           const id = req.params.id;
@@ -49,6 +51,7 @@ const businessController = {
           res.status(500).send(error);
         }
       },
+      //METODO PARA OBTENER TODAS LAS EMPRESAS
       async getAllBusiness(req, res) {
         try {
           const business = await Business.findAll({
@@ -60,6 +63,7 @@ const businessController = {
           res.status(500).send(error);
         }
       },
+      //METODO PARA ACTUALIZAR UNA EMPRESA
       async upadateBusiness(req, res) {
         try {
           const id = req.params.id;
@@ -77,6 +81,7 @@ const businessController = {
           res.status(500).send(error);
         }
       },
+      //METODO PARA ELIMINAR UNA EMPRESA
     
       deleteBusiness(req, res) {
         try {

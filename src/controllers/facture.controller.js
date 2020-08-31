@@ -6,6 +6,7 @@ const {
   } = require("../../services/validation")
 
 const factureController = {
+  //METODO PARA CREAR UNA FACTURA
   async  createfacture(req,res){
         const item = req.body;
         //Validar informacion enviada por el usuario
@@ -33,6 +34,7 @@ const factureController = {
         }
 
     },
+    //METODO PARA OBTENER UNA FACTURA
     async getfacture(req, res) {
         try {
           const id = req.params.id;
@@ -45,6 +47,7 @@ const factureController = {
           res.status(500).send(error);
         }
       },
+      //METODO PARA OBTENER TODAS LAS FACTURAS
       async getAllfacturies(req, res) {
         try {
           const facture = await Facture.findAll({
@@ -55,6 +58,7 @@ const factureController = {
           res.status(500).send(error);
         }
       },
+      //METODO PARA ACTUALIZAR UNA FACTURA
       async upadatefacture(req, res) {
         try {
           const id = req.params.id;
@@ -72,6 +76,7 @@ const factureController = {
           res.status(500).send(error);
         }
       },
+      //METODO PARA ELIMINAR UNA FACTURA
     
       deletefacture(req, res) {
         try {

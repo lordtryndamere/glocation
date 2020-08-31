@@ -5,6 +5,8 @@ const Inventary = db.inventary;
 const { salesval } = require("../../services/validation");
 
 const salesController = {
+  //METODO PARA CREAR UNA VENTA
+
   async createSale(req, res) {
     const item = req.body;
     //Validar informacion enviada por el usuario
@@ -52,6 +54,7 @@ const salesController = {
       res.status(500).send(error);
     }
   },
+  //METODO PARA OBTENER UNA VENTA
   async getSale(req, res) {
     try {
       const id = req.params.id;
@@ -65,7 +68,7 @@ const salesController = {
       res.status(500).send(error);
     }
   },
-
+//METODO PARA OBTENER VENTAS POR PUNTO DE VENTA EMPRESA
   async getSaleByPointOfSale(req, res) {
     try {
       const id = req.params.puntodeventa;
@@ -79,6 +82,7 @@ const salesController = {
       res.status(500).send(error);
     }
   },
+  //METODO PARA OBTENER TODOS LAS VENTAS
   async getAllSales(req, res) {
     try {
       const sales = await Sales.findAll({
@@ -89,6 +93,7 @@ const salesController = {
       res.status(500).send(error);
     }
   },
+  //METODO PARA ACTUALIZAR UNA VENTA
   async upadateSale(req, res) {
     try {
       const id = req.params.id;
@@ -106,7 +111,7 @@ const salesController = {
       res.status(500).send(error);
     }
   },
-
+//METODO PARA ELIMINAR  UNA VENTA
   deleteSale(req, res) {
     try {
       const id = req.params.id;

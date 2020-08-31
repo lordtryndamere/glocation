@@ -1,3 +1,5 @@
+//SERVICIO PARA ASIGNAR PERMISOS A LOS ROLES DE LA PLATAFORMA
+
 const AccessControl = require("accesscontrol");
 const ac = new AccessControl();
 

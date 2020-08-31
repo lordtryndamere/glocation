@@ -1,4 +1,4 @@
-
+//PROCESO DE VALIDACION DE TOKEN PARA LA AUTENTICACION
 const jwt = require('jsonwebtoken');
 
 module.exports= function (req,res,next) {

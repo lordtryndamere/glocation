@@ -7,6 +7,8 @@ const { Pointofsale } = require("../../services/validation");
 const { getLocation } = require("../../services/getLocation");
 
 const pointofsalesController = {
+  //METODO PARA CREAR UN PUNTO DE VENTA CON GEOLOCALIZACION
+
   async createpointofsales(req, res) {
     const item = req.body;
     //Location
@@ -42,6 +44,7 @@ const pointofsalesController = {
       res.status(500).send(error);
     }
   },
+  //METODO PARA OBTENER LOS PUNTOS DE VENTA
   async getpointofsale(req, res) {
     try {
       const id = req.params.id;
@@ -55,6 +58,7 @@ const pointofsalesController = {
       res.status(500).send(error);
     }
   },
+  //METODO PAR AOBTENER TODOS LOS PUNTOS DE VENTA
   async getAllpointofsales(req, res) {
     try {
       const pointofsales = await Pointofsales.findAll({
@@ -66,6 +70,7 @@ const pointofsalesController = {
       res.status(500).send(error);
     }
   },
+  //METODO PARA ACTUALIZAR UN PUNTO DE VENTA
   async upadatepointofsales(req, res) {
     try {
       const id = req.params.id;
@@ -83,7 +88,7 @@ const pointofsalesController = {
       res.status(500).send(error);
     }
   },
-
+//METODO PARA ELIMINAR UN PUNTO DE VENTA
   deletepointofsales(req, res) {
     try {
       const id = req.params.id;
@@ -102,7 +107,7 @@ const pointofsalesController = {
       res.status(500).send(error);
     }
   },
-
+//METODO PARA OBTENER PUNTOS DE VENTA POR CIUDAD
   async getAllpointofsalesperCity(req, res) {
     const city = req.params.city;
     try {
@@ -118,6 +123,7 @@ const pointofsalesController = {
       res.status(500).send(error);
     }
   },
+  //METODO PARA OBTENER PUNTOS DE VENTA A NO MAS DE 1KM DE LA UBICACION DEL USUARIO QUE DESEA COMPRAR
   async getpointsofsalesperdistance(req, res) {
     const user = req.user.id;
     try {

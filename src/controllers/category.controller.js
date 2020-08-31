@@ -5,6 +5,7 @@ const {
   } = require("../../services/validation")
 
 const categoryController = {
+  //METODO PARA CREAR UNA CATEGORIA
   async  createcategory(req,res){
         const item = req.body;
         //Validar informacion enviada por el usuario
@@ -33,6 +34,7 @@ const categoryController = {
         }
 
     },
+    //METODO PARA OBTENER UNA CATEGORIA
     async getcategory(req, res) {
         try {
           const id = req.params.id;
@@ -45,6 +47,7 @@ const categoryController = {
           res.status(500).send(error);
         }
       },
+      //METODO PARA OBTENER TODAS LAS CATEGORIAS
       async getAllcategories(req, res) {
         try {
           const category = await Category.findAll({
@@ -55,6 +58,7 @@ const categoryController = {
           res.status(500).send(error);
         }
       },
+      //METODO PARA ACTUALIZAR UNA CATEGORIA
       async upadatecategory(req, res) {
         try {
           const id = req.params.id;
@@ -72,7 +76,7 @@ const categoryController = {
           res.status(500).send(error);
         }
       },
-    
+    //METODO PARA ELIMINAR UNA CATEGORIA
       deletecategory(req, res) {
         try {
           const id = req.params.id;

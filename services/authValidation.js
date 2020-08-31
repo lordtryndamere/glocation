@@ -1,3 +1,4 @@
+//PROCESO DE VALIDACION DE ACCESO A UNA RUTA
 const { roles } = require('./role')
  
 exports.grantAccess = function(action, resource) {

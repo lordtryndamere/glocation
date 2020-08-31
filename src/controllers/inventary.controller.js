@@ -6,6 +6,7 @@ const {
   } = require("../../services/validation");
 
 const inventaryController = {
+  //METODO PARA CREAR INVENTARIO
   async  createinventary(req,res){
         const item = req.body;
         //Validar informacion enviada por el usuario
@@ -27,6 +28,7 @@ const inventaryController = {
         }
 
     },
+    //METODO PARA OBTENER INVENTARIO
     async getinventary(req, res) {
         try {
           const id = req.params.id;
@@ -40,7 +42,7 @@ const inventaryController = {
           res.status(500).send(error);
         }
       },
-
+//METODO PARA OBTENER INVENTARIO POR PUNTO DE VENTA
       async getinventaryByPointOfSale(req, res) {
         try {
           const id = req.params.puntodeventa;
@@ -54,6 +56,7 @@ const inventaryController = {
           res.status(500).send(error);
         }
       },
+      //OBTENER TODOS LOS DATOS DEL INVENTARIO
       async getAllinventaries(req, res) {
         try {
           const inventary = await Inventary.findAll({
@@ -65,6 +68,7 @@ const inventaryController = {
           res.status(500).send(error);
         }
       },
+      //ACTUALIZAR INVENTARIO
       async upadateinventary(req, res) {
         try {
           const id = req.params.id;
@@ -82,6 +86,7 @@ const inventaryController = {
           res.status(500).send(error);
         }
       },
+      //ELIMINAR INVENTARIO
     
       deleteinventary(req, res) {
         try {

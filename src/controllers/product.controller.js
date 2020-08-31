@@ -7,6 +7,7 @@ const {
   } = require("../../services/validation")
 
 const productController = {
+  //METODO PARA CREAR UN PRODUCTO
   async  createproduct(req,res){
         const item = req.body;
         //Validar informacion enviada por el usuario
@@ -34,6 +35,7 @@ const productController = {
         }
 
     },
+    //METODO PARA OBTENER PRODUCTOS POR CATEGORIA
     async getproductsByCategorie(req, res) {
         try {
           const id = req.params.categoria;
@@ -47,6 +49,7 @@ const productController = {
           res.status(500).send(error);
         }
       },
+      //METODO PARA OBTENER PRODUCTO
       async getproduct(req, res) {
         try {
           const id = req.params.id;
@@ -60,6 +63,7 @@ const productController = {
           res.status(500).send(error);
         }
       },
+      //METODO PARA OBTENER TODOS LOS PRODUCTOS
       async getAllproduct(req, res) {
         try {
           const product = await Product.findAll({
@@ -71,6 +75,7 @@ const productController = {
           res.status(500).send(error);
         }
       },
+      //METODO PARA ACTUALIZAR UN PRODUCTO
       async upadateproduct(req, res) {
         try {
           const id = req.params.id;
@@ -88,7 +93,7 @@ const productController = {
           res.status(500).send(error);
         }
       },
-    
+    //METODO PARA ELIINAR UN PRODUCTO
       deleteproduct(req, res) {
         try {
           const id = req.params.id;

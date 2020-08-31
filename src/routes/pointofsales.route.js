@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const pointofsalesController = require('../controllers/pointofsales.controller');
-const replica = require('../../services/authValidation')
-const isLogged = require('../../services/isLogged');
+const isLogged = require('../../services/isLogged'); //MIDDLEWARE QUE SE ENCARGA DE VALIDAD SI ESTA LOGEADO
+const replica = require('../../services/authValidation') //MIDLLEWARE PARA VALIDAR EL ROL Y EL PERMISO A LA RUTA
 
 
 router.post('/',isLogged,replica.grantAccess('createAny','puntoventas'),pointofsalesController.createpointofsales);

@@ -9,6 +9,7 @@ const {
 
 const { getLocation } = require("../../services/getLocation");
 const userController = {
+  //METODO PARA REGISTAR UN USUARIO
   async register(req, res) {
     const item = req.body;
 
@@ -52,7 +53,7 @@ const userController = {
       res.status(500).send(err);
     }
   },
-
+//METODO PARA LOGEAR UN USUARIO
   async login(req, res) {
     const item = req.body;
     //Validar informacion enviada por el usuario
@@ -84,7 +85,7 @@ const userController = {
       role: data.role
     });
   },
-
+//METODO PARA OBTENER UN USUARIO
   async getUser(req, res) {
     try {
       const id = req.params.id;
@@ -98,6 +99,7 @@ const userController = {
       res.status(500).send(error);
     }
   },
+  //METODO PARA OBTENER TODOS LOS USUARIOS
   async getUsers(req, res) {
     try {
       const users = await User.findAll({
@@ -109,6 +111,7 @@ const userController = {
       res.status(500).send(error);
     }
   },
+  //METODO PARA ACTUALIZAR UN USUARIO
   async upadateUser(req, res) {
     try {
       const id = req.params.id;
@@ -126,7 +129,7 @@ const userController = {
       res.status(500).send(error);
     }
   },
-
+//METODO PARA ELIMINAR UN USUARIO
   deleteUser(req, res) {
     try {
       const id = req.params.id;

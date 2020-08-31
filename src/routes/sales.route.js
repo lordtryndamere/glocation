@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const salesController = require('../controllers/sales.controller');
-const isLogged = require('../../services/isLogged');
-const replica = require('../../services/authValidation');
+const isLogged = require('../../services/isLogged'); //MIDDLEWARE QUE SE ENCARGA DE VALIDAD SI ESTA LOGEADO
+const replica = require('../../services/authValidation') //MIDLLEWARE PARA VALIDAR EL ROL Y EL PERMISO A LA RUTA
 
 
 

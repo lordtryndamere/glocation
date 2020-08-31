@@ -1,4 +1,4 @@
-
+//SERVICIO PARA OBTENER DISTANCIA EN KILOMETROS DE DOS PUNTOS GEOGRAFICOS
 const getKilometres = (lat1,lon1,lat2,lon2)=>{
 rad = function(x) {return x*Math.PI/180;}
 var R = 6378.137; //Radio de la tierra en km
