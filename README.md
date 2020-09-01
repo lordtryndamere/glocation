@@ -166,7 +166,7 @@ npm start
 
 **Logear usuario**
 ----
- Regresa un json con la información del usuario logeado. 
+ Regresa un json con la información del usuario logeado y en los headers queda el token 'auth-token' que se debe pasar en todas las peticiones que se hagan a la API.. 
 
 * **URL**
 
